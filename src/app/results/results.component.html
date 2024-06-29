@@ -1,0 +1,28 @@
+<div class="results-container">
+    <div class="status-icon">
+      <i class="checkmark">✔</i>
+    </div>
+    <h2>Data imported successfully</h2>
+
+  
+    <div class="summary-table">
+      <ul class="tabs">
+        <li class="active">Employee Details</li>
+      </ul>
+      <table>
+        <tr>
+          <td>Employee Details</td>
+          <td>Success:</td>
+          <td>{{ correctRows }}</td>
+        </tr>
+        <tr>
+          <td>Total No. of Records</td>
+          <td>Failure:</td>
+          <td>{{ incorrectRows }}</td>
+        </tr>
+      </table>
+    </div>
+  
+    <button (click)="router.navigate(['/upload'])">Upload New File</button>
+  </div>
+  

@@ -1,0 +1,27 @@
+<h2>Preview Uploaded Data</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>City</th>
+      <th>Address</th>
+      <th>GPA</th>
+      <th>Errors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of csvData">
+      <td [ngClass]="{ 'errors': row.errors?.includes('Invalid or missing Name') }">{{ row.Name }}</td>
+      <td [ngClass]="{ 'errors': row.errors?.includes('Invalid or missing Email') }">{{ row.Email }}</td>
+      <td [ngClass]="{ 'errors': row.errors?.includes('Invalid or missing Phone number') }">{{ row['Phone number'] }}</td>
+      <td [ngClass]="{ 'errors': row.errors?.includes('Invalid or missing City') }">{{ row.City }}</td>
+      <td [ngClass]="{ 'errors': row.errors?.includes('Invalid or missing Address') }">{{ row.Address }}</td>
+      <td [ngClass]="{ 'errors': row.errors?.includes('Invalid or missing GPA') }">{{ row.GPA }}</td>
+      <td class="errors">{{ row.errors | json }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="nextPage()">Next</button>
